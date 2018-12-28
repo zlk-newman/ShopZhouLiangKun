@@ -54,7 +54,7 @@ public class GoodsDemo {
 					break;
 		}*/
 				returnGoods=g;
-				break;
+				
 			}
 			return returnGoods;
 			}
