@@ -40,9 +40,7 @@ public class GoodsDemo {
 	}
 	public static Goods SelectGoods(int id) {
 			Goods returnGoods=null;
-			
-			
-			
+			Goods goods=new Goods();
 			
 			GoodsSelect n=new GoodsSelect();
 			Goods g1=n.findUser(id);
@@ -51,11 +49,12 @@ public class GoodsDemo {
 			System.out.println("被改动的商品信息如下："+list);
 			for(Goods g:list) {
 			
-				if(g.getId()==id) {
+			/*	if(goods.equals(g)) {//有错误！
 					returnGoods=g;
 					break;
-		}
-				
+		}*/
+				returnGoods=g;
+				break;
 			}
 			return returnGoods;
 			}
@@ -126,6 +125,10 @@ public class GoodsDemo {
 					}
 				}
 			}
+		}
+		public static void seeGoods() {
+			System.out.println("欢迎来到电子商城：");
+			
 		}
 	
 }
