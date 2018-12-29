@@ -74,7 +74,7 @@ public class AdminLogin {
 				break;
 			case 3:
 				System.out.println("您选择的菜单是：删除商品。");
-				GoodsDemo.deleteGoods();
+				GoodsDemo1.deleteGoods();
 				break;
 			case 4:
 				System.out.println("您选择的菜单是：查看商品列表。");

@@ -5,8 +5,8 @@ import java.util.List;
 import java.util.Scanner;
 
 import com.ZhouLiangKun.shop.dao.GoodsDao;
+import com.ZhouLiangKun.shop.dao.GoodsSelect;
 import com.ZhouLiangKun.shop.pojo.Goods;
-import com.ZhouLiangKun.shop.tool.GoodsSelect;
 
 
 public class GoodsDemo {
@@ -94,28 +94,7 @@ public class GoodsDemo {
 				}
 			}
 		
-		public static void deleteGoods() {
-			System.out.println("*****开始删除商品******");
-			System.out.println("请输入要删除的商品编号：");
-			while(true) {
-				Scanner sc=new Scanner(System.in);
-				int id=sc.nextInt();
-				
-				Goods goods=SelectGoods(id);
-				if(goods==null) {
-
-					System.out.println("未找到该商品！");
-					System.out.println("请重新输入要修改的商品编号：");
-					
-				}else {
-					GoodsDao usn = new GoodsDao();
-					if(usn.delUser(goods)) {
-						System.out.println("删除商品成功！");
-						break;
-					}
-				}
-			}
-		}
+		
 		
 		//查看商城
 		public static void seeGoods() {
