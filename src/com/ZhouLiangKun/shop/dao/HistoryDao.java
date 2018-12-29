@@ -54,7 +54,7 @@ public History findUser(int  id){//加static可以提前形成数据，防止丢失数据
         
         stmt = conn.prepareStatement(sql);//得到执行sql语句的对象Statement
         //给？赋值
-        stmt.setInt(2, id);
+        stmt.setInt(1, id);
         
         
         rs = stmt.executeQuery();//执行sql语句

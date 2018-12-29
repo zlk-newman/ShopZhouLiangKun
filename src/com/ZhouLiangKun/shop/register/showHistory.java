@@ -22,7 +22,6 @@ public class showHistory {
 	
 			System.out.println(history);
 			
-			break;
 		}
 		Shop2 s2=new Shop2();
 		s2.showMainMenu2();
