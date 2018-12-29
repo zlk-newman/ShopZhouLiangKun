@@ -1,4 +1,4 @@
-package com.ZhouLiangKun.shop.tool;
+package com.ZhouLiangKun.shop.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import com.ZhouLiangKun.shop.pojo.Goods;
+import com.ZhouLiangKun.shop.tool.DButil;
 
 
 public class GoodsSelect {
@@ -39,7 +40,7 @@ public class GoodsSelect {
                
                 g.setId(rs.getInt(1));
                 g.setDname(rs.getString(2));
-                g.setNumber(rs.getString(3));
+                g.setNumber(rs.getInt(3));
                 g.setPrice(rs.getDouble(4));
                 
                 g.toString();

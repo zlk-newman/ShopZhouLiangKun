@@ -5,8 +5,15 @@ package com.ZhouLiangKun.shop;
  */
 import java.util.Scanner;
 
+import com.ZhouLiangKun.shop.dao.GoodsDao;
+import com.ZhouLiangKun.shop.dao.HistoryDao;
+import com.ZhouLiangKun.shop.pojo.Goods;
+import com.ZhouLiangKun.shop.pojo.History;
+import com.ZhouLiangKun.shop.register.BuyDemo;
 import com.ZhouLiangKun.shop.register.GoodsDemo;
 import com.ZhouLiangKun.shop.register.Join;
+import com.ZhouLiangKun.shop.register.Pay;
+import com.ZhouLiangKun.shop.register.showHistory;
 
 
 public class Shop2 {
@@ -26,15 +33,14 @@ public class Shop2 {
 		System.out.println("*****欢迎进入电子商城*****");
 		System.out.println("\t1.返回上一层");
 		System.out.println("\t2.查看商城");
-		System.out.println("\t3.查看我的购物车");
-		System.out.println("\t4.查看我购买的商品");
-		System.out.println("\t5.修改我的密码");
+		System.out.println("\t3.查看我购买的商品");
+		System.out.println("\t4.修改我的密码");
 		System.out.println("\t0.退出系统");
 		System.out.println("***********************");
 		System.out.println("请选择菜单：");
 	
 		String choice=sc.next();
-		boolean r = choice.matches("[0-5]+");//正则表达式
+		boolean r = choice.matches("[0-4]+");//正则表达式
 		if(r) {
 
 			int n=Integer.parseInt(choice);
@@ -49,19 +55,16 @@ public class Shop2 {
 		case 2:
 			System.out.println("您选择的菜单是：查看商城");
 			GoodsDemo.seeGoods();
+		    Pay.pay();
 			System.out.println("****************************************");
 			break;
+		
 		case 3:
-			System.out.println("您选择的菜单是：查看我的购物车");
-			
+			System.out.println("您选择的菜单是：查看我购买的商品");
+			showHistory.showHis();
 			System.out.println("****************************************");
 			break;
 		case 4:
-			System.out.println("您选择的菜单是：查看我购买的商品");
-			
-			System.out.println("****************************************");
-			break;
-		case 5:
 			System.out.println("您选择的菜单是：修改我的密码");
 			Join.updateShopper();
 			System.out.println("****************************************");

@@ -1,9 +1,9 @@
 package com.ZhouLiangKun.shop.pojo;
 
-public class Goods implements Comparable<Goods>{
+public class Goods implements Comparable<Goods>,Cloneable{
 	private int id;
 	private String Dname;
-	private String number;
+	private int number;
 	private double price;
 	
 	
@@ -14,7 +14,7 @@ public class Goods implements Comparable<Goods>{
 	}
 	public Goods() {} 
 	
-	public Goods(int id,String Dname,String number,double price) {
+	public Goods(int id,String Dname,int number,double price) {
 		this.id=id;
 		this.Dname=Dname;
 		this.number=number;
@@ -36,10 +36,10 @@ public class Goods implements Comparable<Goods>{
 		Dname = dname;
 	}
 	
-	public String getNumber() {
+	public int getNumber() {
 		return number;
 	}
-	public void setNumber(String number) {
+	public void setNumber(int number) {
 		this.number = number;
 	}
 	public double getPrice() {
@@ -52,6 +52,12 @@ public class Goods implements Comparable<Goods>{
 	public int compareTo(Goods goods) {
 		return this.Dname.compareTo(goods.Dname);
 		
+	}
+	@Override
+	public Goods clone() throws CloneNotSupportedException {
+
+		Goods goods=(Goods)super.clone();
+		return goods;
 	}
 
 }

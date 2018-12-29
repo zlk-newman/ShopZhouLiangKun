@@ -6,12 +6,11 @@ package com.ZhouLiangKun.shop.register;
 import java.util.Scanner;
 
 import com.ZhouLiangKun.shop.Shop;
-import com.ZhouLiangKun.shop.dao.GoodsDao;
+import com.ZhouLiangKun.shop.dao.DoLogin;
+
 import com.ZhouLiangKun.shop.dao.ShopperDao;
-import com.ZhouLiangKun.shop.pojo.Goods;
+
 import com.ZhouLiangKun.shop.pojo.Shopper;
-import com.ZhouLiangKun.shop.tool.DoLogin;
-import com.ZhouLiangKun.shop.tool.GoodsSelect;
 
 public class Join {
 	/*
@@ -100,6 +99,7 @@ public class Join {
 	 * 登陆设置 username password flag
 	 */
 
+	
 	public static void login() {
 		String username = "";
 		String password = "";
@@ -114,26 +114,38 @@ public class Join {
 			password = s2.nextLine();
 
 			DoLogin d=new DoLogin();
-			Shopper user = d.findUser(username);// 调用查询用户的方法
+			Shopper user = DoLogin.findUser(username);// 调用查询用户的方法
 			/*
 			 * ShopperDao sd=new ShopperDao(); Shopper
 			 * user=sd.selectUserByUsername(username);
 			 */
 
-			if (user != null) {
+			
+			if (user==null) {
+				
+				System.out.println("用户名不存在！");
+				System.out.println("*****************************");
+				System.out.println("请重新输入用户名：");
+				continue;
+				
+				
+			} else 
+				if(password.equals(user.getUpassword())){
+				
+
 				System.out.println("欢迎你：" + user.getUname());
 				flag = true;
 				login=true;
 
 				break;
-			} else {
-				System.out.println("用户名或密码错误！");
+			}else {
+				System.out.println("密码错误！");
 				System.out.println("*****************************");
 				System.out.println("请重新输入用户名：");
-
+				continue;
 			}
 
-			break;
+			
 		}
 
 	}
@@ -186,4 +198,3 @@ public class Join {
 		}
 
 }
-

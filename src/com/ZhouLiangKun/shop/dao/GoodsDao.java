@@ -67,7 +67,7 @@ public class GoodsDao {
 				Goods goods=new Goods();
 				goods.setId(rs.getInt(1));
 				goods.setDname(rs.getString(2));
-				goods.setNumber(rs.getString(3));
+				goods.setNumber(rs.getInt(3));
 				goods.setPrice(rs.getDouble(4));
 				list.add(goods);
 			}

@@ -24,7 +24,7 @@ public class GoodsDemo {
 		
 		System.out.println("请输入商品数量：");
 		Scanner s4=new Scanner(System.in);
-		goods.setNumber(s4.next());
+		goods.setNumber(s4.nextInt());
 		
 		System.out.println("请输入商品价格：");
 		Scanner s3=new Scanner(System.in);
@@ -73,7 +73,7 @@ public class GoodsDemo {
 					String name=in.nextLine();
 
 					System.out.println("请输入修改后的商品数量：");
-					String number=in.nextLine();
+					int number=in.nextInt();
 					
 					System.out.println("请输入修改后的商品价格：");
 					Double price=in.nextDouble();

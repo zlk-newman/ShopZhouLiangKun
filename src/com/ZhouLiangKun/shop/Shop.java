@@ -6,9 +6,12 @@ package com.ZhouLiangKun.shop;
 
 import java.util.Scanner;
 
+
 import com.ZhouLiangKun.shop.register.AdminLogin;
+
 import com.ZhouLiangKun.shop.register.GoodsDemo;
 import com.ZhouLiangKun.shop.register.Join;
+
 
 public class Shop {
 	Scanner sc=new Scanner(System.in);
@@ -50,8 +53,10 @@ public class Shop {
 		case 2:
 			System.out.println("您选择的菜单是：登录");
 			Join.login();
+			if(Join.login) {
 			Shop2 s2=new Shop2();
 			s2.showMainMenu2();
+			}
 			System.out.println("****************************************");
 			break;
 		case 3:
@@ -62,11 +67,10 @@ public class Shop {
 		case 4:
 			System.out.println("您选择的菜单是:查看商城");
 			GoodsDemo.seeGoods();
-			if (Join.login) {
-				
-			}
 			System.out.println("你还未登录，请先登录，在购买商品。");
 			System.out.println("****************************************");
+			Shop s1=new Shop();
+			s1.showMainMenu();
 			break;
 		case 0:
 			System.out.println("谢谢使用！");
