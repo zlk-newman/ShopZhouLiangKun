@@ -19,6 +19,7 @@ public class Shop {
 		/*boolean go_on=true;*/
 		while(true) {
 		shop.showMainMenu();
+		break;
 		}
 	}
 	
