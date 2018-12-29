@@ -92,6 +92,7 @@ public class Join {
 				}
 			}
 
+			break;
 		}
 	}
 
@@ -132,6 +133,7 @@ public class Join {
 
 			}
 
+			break;
 		}
 
 	}
@@ -177,7 +179,7 @@ public class Join {
 					System.out.println("ĞŞ¸ÄÃÜÂë³É¹¦\t");
 					Shop s1=new Shop();
 					s1.showMainMenu();
-					
+					break;
 				}
 			}
 			}
