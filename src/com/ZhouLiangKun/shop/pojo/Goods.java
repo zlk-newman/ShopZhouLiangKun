@@ -1,6 +1,6 @@
 package com.ZhouLiangKun.shop.pojo;
 
-public class Goods {
+public class Goods implements Comparable<Goods>{
 	private int id;
 	private String Dname;
 	private String number;
@@ -48,6 +48,10 @@ public class Goods {
 	public void setPrice(double price) {
 		this.price = price;
 	}
-	
+	@Override
+	public int compareTo(Goods goods) {
+		return this.Dname.compareTo(goods.Dname);
+		
+	}
 
 }

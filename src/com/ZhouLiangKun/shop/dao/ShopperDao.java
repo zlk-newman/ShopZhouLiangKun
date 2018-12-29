@@ -1,9 +1,10 @@
-package com.ZhouLiangKun.shop.tool;
+package com.ZhouLiangKun.shop.dao;
 
 import java.sql.Connection;
 
-
+import com.ZhouLiangKun.shop.pojo.Goods;
 import com.ZhouLiangKun.shop.pojo.Shopper;
+import com.ZhouLiangKun.shop.tool.DButil;
 
 
 
@@ -37,6 +38,17 @@ public class ShopperDao {
 		return flage;
 		
 	}	
-	
+	public boolean updateUser(Shopper user) {
+		boolean flage=false;
+		Connection conn=DButil.getConnection();
+		String sql="update shopper set Upassword=? where Uname=?";
+		int n=DButil.executeUpdate(sql,new Object[] {
+				user.getUpassword(),user.getUname()
+		});
+		if(n==1)flage=true;
+		DButil.close(null, null, conn);
+		return flage;
+	}
+
 
 }

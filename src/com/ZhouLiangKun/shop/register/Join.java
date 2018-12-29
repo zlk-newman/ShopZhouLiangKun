@@ -5,15 +5,19 @@ package com.ZhouLiangKun.shop.register;
 
 import java.util.Scanner;
 
-
+import com.ZhouLiangKun.shop.Shop;
+import com.ZhouLiangKun.shop.dao.GoodsDao;
+import com.ZhouLiangKun.shop.dao.ShopperDao;
+import com.ZhouLiangKun.shop.pojo.Goods;
 import com.ZhouLiangKun.shop.pojo.Shopper;
 import com.ZhouLiangKun.shop.tool.DoLogin;
-import com.ZhouLiangKun.shop.tool.ShopperDao;
+import com.ZhouLiangKun.shop.tool.GoodsSelect;
 
 public class Join {
 	/*
 	 * 注册用户信息 user s1 s2
 	 */
+	public static boolean login=false;
 	public static void Join() {
 
 		Shopper user = new Shopper();
@@ -109,7 +113,7 @@ public class Join {
 			password = s2.nextLine();
 
 			DoLogin d=new DoLogin();
-			Shopper user = d.findUser(username,password);// 调用查询用户的方法
+			Shopper user = d.findUser(username);// 调用查询用户的方法
 			/*
 			 * ShopperDao sd=new ShopperDao(); Shopper
 			 * user=sd.selectUserByUsername(username);
@@ -118,6 +122,7 @@ public class Join {
 			if (user != null) {
 				System.out.println("欢迎你：" + user.getUname());
 				flag = true;
+				login=true;
 
 				break;
 			} else {
@@ -130,6 +135,53 @@ public class Join {
 		}
 
 	}
+	//修改用户密码
+	public static Shopper SelectGoods(String name) {
+		
+		
+		DoLogin n=new DoLogin();
+		Shopper g1=n.findUser(name);
+	
+		return g1 ;
+		}
+
+	public static void updateShopper() {
+		System.out.println("******开始修改密码******");
+		System.out.println("请输入用户名：");
+		
+		while(true) {
+			
+			Scanner sc=new Scanner(System.in); 
+			String name=sc.nextLine();
+			
+			
+			Shopper shopper=SelectGoods(name);
+			
+			if(shopper==null) {
+
+				System.out.println("未找到该用户！");
+				System.out.println("请重新输入用户名：");
+			}else {
+				
+				
+				Scanner in=new Scanner(System.in);
+				System.out.println("请输入修改后的密码：");
+				String password=in.nextLine();
+
+				
+				
+				shopper.setUpassword(password);;
+				
+				ShopperDao usl = new ShopperDao();
+				if(usl.updateUser(shopper)) {
+					System.out.println("修改密码成功\t");
+					Shop s1=new Shop();
+					s1.showMainMenu();
+					
+				}
+			}
+			}
+		}
 
 }
 

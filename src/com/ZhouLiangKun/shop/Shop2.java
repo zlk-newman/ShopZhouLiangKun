@@ -5,6 +5,9 @@ package com.ZhouLiangKun.shop;
  */
 import java.util.Scanner;
 
+import com.ZhouLiangKun.shop.register.GoodsDemo;
+import com.ZhouLiangKun.shop.register.Join;
+
 
 public class Shop2 {
 	Scanner sc=new Scanner(System.in);
@@ -24,12 +27,13 @@ public class Shop2 {
 		System.out.println("\t2.查看商城");
 		System.out.println("\t3.查看我的购物车");
 		System.out.println("\t4.查看我购买的商品");
+		System.out.println("\t5.修改我的密码");
 		System.out.println("\t0.退出系统");
 		System.out.println("***********************");
 		System.out.println("请选择菜单：");
 	
 		String choice=sc.next();
-		boolean r = choice.matches("[0-6]+");//正则表达式
+		boolean r = choice.matches("[0-5]+");//正则表达式
 		if(r) {
 
 			int n=Integer.parseInt(choice);
@@ -43,7 +47,7 @@ public class Shop2 {
 			break;
 		case 2:
 			System.out.println("您选择的菜单是：查看商城");
-		    
+			GoodsDemo.seeGoods();
 			System.out.println("****************************************");
 			break;
 		case 3:
@@ -56,7 +60,11 @@ public class Shop2 {
 			
 			System.out.println("****************************************");
 			break;
-	
+		case 5:
+			System.out.println("您选择的菜单是：修改我的密码");
+			Join.updateShopper();
+			System.out.println("****************************************");
+			break;
 		case 0:
 			System.out.println("谢谢使用！");
 			/*go_on=false;*/
@@ -64,13 +72,13 @@ public class Shop2 {
 			break;
 			
 		default:
-				
+			System.out.println("您的输入有误！");
 				break;
 		
 		}
 		
 		}
-		System.out.println("您的输入有误！");
+		
 	
 
 	}

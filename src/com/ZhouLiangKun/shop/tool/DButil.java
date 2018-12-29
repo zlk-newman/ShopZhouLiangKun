@@ -57,7 +57,7 @@ public class DButil {
 		
 	}
 	
-	/*//针对查询
+	
 	public static ResultSet executeQuery(String sql ,Object[] param)  {
 			
 
@@ -77,7 +77,7 @@ public class DButil {
 			
 		return rs;
 	}
-*/
+
 
 //释放资源
 	public static void close(ResultSet rs,PreparedStatement stsm,Connection conn) {

@@ -1,8 +1,13 @@
 package com.ZhouLiangKun.shop.register;
+import java.util.ArrayList;
+import java.util.List;
 /*
 管理员登陆
 */
 import java.util.Scanner;
+
+import com.ZhouLiangKun.shop.Shop;
+import com.ZhouLiangKun.shop.pojo.Goods;
 
 public class AdminLogin {
 	
@@ -73,13 +78,15 @@ public class AdminLogin {
 				break;
 			case 4:
 				System.out.println("您选择的菜单是：查看商品列表。");
+				GoodsDemo.seeGoods();
+				
 				break;
 			
 			case 5:
 				System.out.println("感谢您的使用，再见！");
-				go_on=false;
+				Shop s1=new Shop();
+				s1.showMainMenu();
 				
-				break;
 				
 			default:
 				System.out.println("您输入有误");

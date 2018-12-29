@@ -1,8 +1,13 @@
-package com.ZhouLiangKun.shop.tool;
+package com.ZhouLiangKun.shop.dao;
 
 import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.ZhouLiangKun.shop.pojo.Goods;
+import com.ZhouLiangKun.shop.tool.DButil;
 
 /*
  * 对于商品数据库的增删
@@ -51,5 +56,28 @@ public class GoodsDao {
 		DButil.close(null, null, conn);
 		return flage;
 	}
+	public List<Goods> selectAllUser () {
 
+		List<Goods> list=new ArrayList<>();
+		Connection conn=DButil.getConnection();
+		String sql="select * from goods ";
+		ResultSet rs=DButil.executeQuery(sql,null);
+		try {
+			while(rs.next()) {
+				Goods goods=new Goods();
+				goods.setId(rs.getInt(1));
+				goods.setDname(rs.getString(2));
+				goods.setNumber(rs.getString(3));
+				goods.setPrice(rs.getDouble(4));
+				list.add(goods);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		DButil.close(rs,null,conn);  
+			return	  list;		
+		
+}
 }

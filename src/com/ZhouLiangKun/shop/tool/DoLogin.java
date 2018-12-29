@@ -20,7 +20,7 @@ public class DoLogin {
      * @return u
      */
 
-    public static Shopper findUser(String name,String pwd){
+    public static Shopper findUser(String name){
 
         Connection conn = null;
         PreparedStatement stmt = null;
@@ -28,11 +28,11 @@ public class DoLogin {
         Shopper u = null;
         try {
             conn = DButil.getConnection();//得到连接对象Connection
-            String sql ="SELECT * FROM shopper WHERE Uname=? AND Upassword=?";
+            String sql ="SELECT * FROM shopper WHERE Uname=? ";
             stmt = conn.prepareStatement(sql);//得到执行sql语句的对象Statement
             //给？赋值
             stmt.setString(1, name);
-            stmt.setString(2, pwd);
+           
             
             rs = stmt.executeQuery();//执行sql语句
             if(rs.next()){

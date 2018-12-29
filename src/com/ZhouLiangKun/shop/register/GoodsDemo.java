@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import com.ZhouLiangKun.shop.dao.GoodsDao;
 import com.ZhouLiangKun.shop.pojo.Goods;
-import com.ZhouLiangKun.shop.tool.GoodsDao;
 import com.ZhouLiangKun.shop.tool.GoodsSelect;
 
 
@@ -39,24 +39,12 @@ public class GoodsDemo {
 		
 	}
 	public static Goods SelectGoods(int id) {
-			Goods returnGoods=null;
-			Goods goods=new Goods();
+			
 			
 			GoodsSelect n=new GoodsSelect();
 			Goods g1=n.findUser(id);
-			List<Goods> list=new ArrayList<>();
-			list.add(g1);
-			System.out.println("被改动的商品信息如下："+list);
-			for(Goods g:list) {
-			
-			/*	if(goods.equals(g)) {//有错误！
-					returnGoods=g;
-					break;
-		}*/
-				returnGoods=g;
-				
-			}
-			return returnGoods;
+		
+			return g1 ;
 			}
 	
 		public static void updateGoods() {
@@ -118,18 +106,35 @@ public class GoodsDemo {
 
 					System.out.println("未找到该商品！");
 					System.out.println("请重新输入要修改的商品编号：");
+					
 				}else {
 					GoodsDao usn = new GoodsDao();
 					if(usn.delUser(goods)) {
 						System.out.println("删除商品成功！");
+						break;
 					}
 				}
 			}
 		}
+		
+		//查看商城
 		public static void seeGoods() {
 			System.out.println("欢迎来到电子商城：");
 			
+            Goods goods=new Goods();
+            
+            List<Goods> list=new ArrayList<>();
+			GoodsDao n=new GoodsDao();
+			list=n.selectAllUser();
+			
+			
+			for(Goods g:list) {
+		
+				System.out.println(g);	
+			}
+			
 		}
+		
 	
 }
 
