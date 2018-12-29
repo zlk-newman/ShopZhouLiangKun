@@ -15,17 +15,17 @@ public class AdminLogin {
 			
 			Scanner sc=new Scanner(System.in);
 			String admin_name="";
-			String admin_password="";
+			String admin_p="";
 			
 			System.out.println("请输入管理员的用户名");	
 			
 			while (true ) {
 				admin_name=sc.next();
 				System.out.println("请输入管理员的密码");
-				admin_password=sc.next();
+				admin_p=sc.next();
 				
 				//判断输入的用户名，密码是否正确
-				if(admin_name.equals("admin")&&admin_password.equals("12345")) {
+				if(admin_name.equals("admin")&&admin_p.equals("12345")) {
 					System.out.println("管理员登陆成功");
 					//菜单循环显示flag
 					boolean go_on=true;
