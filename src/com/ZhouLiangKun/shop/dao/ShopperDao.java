@@ -41,8 +41,8 @@ public class ShopperDao {
 	public boolean updateUser(Shopper user) {
 		boolean flage=false;
 		Connection conn=DButil.getConnection();
-		String sql="update shopper set Upassword=? where Uname=?";
-		int n=DButil.executeUpdate(sql,new Object[] {
+		/*String sql="update shopper set Upassword=? where Uname=?";*/
+		int n=DButil.executeUpdate("update shopper set Upassword=? where Uname=?",new Object[] {
 				user.getUpassword(),user.getUname()
 		});
 		if(n==1)flage=true;
