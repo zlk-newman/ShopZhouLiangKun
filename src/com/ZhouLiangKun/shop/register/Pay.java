@@ -15,8 +15,6 @@ public class Pay {
 			
 			BuyDemo.buy();
 			
-			
-			
 			System.out.println("是否继续购买：Y/N");
 			Scanner sc1=new Scanner(System.in);
 			is_continue=sc1.nextLine();
@@ -29,9 +27,8 @@ public class Pay {
 		for(Goods goods1:BuyDemo.list) {
 			
 			Double price=new Double(goods1.getPrice());
-			int num=goods1.getNumber();
 			
-			total=total+(num*price);
+			total=total+price;
 			
 		}
 		
@@ -47,27 +44,23 @@ public class Pay {
 			for(Goods goods2:BuyDemo.list) {
 				HistoryDao h=new HistoryDao();
 				History his=new History();
+				his.setUname(Join.Duser.getUname());
 				his.setGid(goods2.getId());
 				his.setGname(goods2.getDname());
 				his.setGnumber(goods2.getNumber());
-				his.setGprice(goods2.getPrice()*goods2.getNumber());
+				his.setGprice(goods2.getPrice());
 				
-				if(h.addUser(his)) {
+				h.addUser(his);
 					
-					Goods go=GoodsDemo.SelectGoods(goods2.getId());
+				Goods go=GoodsDemo.SelectGoods(goods2.getId());
 					
-					go.setNumber(go.getNumber()-goods2.getNumber());
-					GoodsDao usl = new GoodsDao();
-					if(usl.updateUser(go)) {
-						System.out.println("******商品购买成功！******");
-						Shop2 s3=new Shop2();
-						s3.showMainMenu2();
-						break;
-					}
-				}
-				
+				go.setNumber(go.getNumber()-goods2.getNumber());
+				GoodsDao usl = new GoodsDao();
+				usl.updateUser(go);
 			}
-			
+			System.out.println("******商品购买成功！******");
+			Shop2 s3=new Shop2();
+			s3.showMainMenu2();
 			
 		}else {
 			System.out.println("支付失败！系统将返回您登陆后的界面 "+"\t"+" Loading......");

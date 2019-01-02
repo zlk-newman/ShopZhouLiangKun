@@ -16,6 +16,7 @@ public class Join {
 	/*
 	 * 注册用户信息 user s1 s2
 	 */
+	public static Shopper Duser=new Shopper();
 	public static boolean login=false;
 	public static void Join() {
 
@@ -114,14 +115,14 @@ public class Join {
 			password = s2.nextLine();
 
 			DoLogin d=new DoLogin();
-			Shopper user = DoLogin.findUser(username);// 调用查询用户的方法
+			Duser = DoLogin.findUser(username);// 调用查询用户的方法
 			/*
 			 * ShopperDao sd=new ShopperDao(); Shopper
 			 * user=sd.selectUserByUsername(username);
 			 */
 
 			
-			if (user==null) {
+			if (Duser==null) {
 				
 				System.out.println("用户名不存在！");
 				System.out.println("*****************************");
@@ -130,10 +131,10 @@ public class Join {
 				
 				
 			} else 
-				if(password.equals(user.getUpassword())){
+				if(password.equals(Duser.getUpassword())){
 				
 
-				System.out.println("欢迎你：" + user.getUname());
+				System.out.println("欢迎你：" + Duser.getUname());
 				flag = true;
 				login=true;
 

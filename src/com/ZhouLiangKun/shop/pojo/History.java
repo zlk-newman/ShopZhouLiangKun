@@ -2,10 +2,12 @@ package com.ZhouLiangKun.shop.pojo;
 
 public class History {
 	private int did;
+	private String Uname;
 	private int Gid;
 	private String Gname;
 	private int Gnumber;
 	private Double Gprice;
+	
 	
 	
 	
@@ -15,25 +17,37 @@ public class History {
 	
 	@Override
 	public String toString() {
-		return "History [did=" + did + ", Gid=" + Gid + ", Gname=" + Gname + ", Gnumber=" + Gnumber + ", Gprice="
-				+ Gprice + "]";
+		return "History [did=" + did + ", Uname=" + Uname + ", Gid=" + Gid + ", Gname=" + Gname + ", Gnumber=" + Gnumber
+				+ ", Gprice=" + Gprice + "]";
 	}
 	
 
-	public History(int did, int gid, String gname, int gnumber, Double gprice) {
+	
+	public History(int did, String uname, int gid, String gname, int gnumber, Double gprice) {
 		super();
 		this.did = did;
+		Uname = uname;
 		Gid = gid;
 		Gname = gname;
 		Gnumber = gnumber;
 		Gprice = gprice;
 	}
+
 	public int getDid() {
 		return did;
 	}
 	public void setDid(int did) {
 		this.did = did;
 	}
+	
+	public String getUname() {
+		return Uname;
+	}
+
+	public void setUname(String uname) {
+		Uname = uname;
+	}
+
 	public int getGid() {
 		return Gid;
 	}

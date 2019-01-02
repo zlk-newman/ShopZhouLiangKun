@@ -9,6 +9,7 @@ import com.ZhouLiangKun.shop.pojo.Goods;
 
 public class BuyDemo {
 	public static List<Goods> list=new ArrayList<Goods>();
+	public static Goods mygood=new Goods();
 	public static Goods  goods=new Goods();
 	public static void buy() {
 		System.out.println("请输入您要购买的商品编号：");
@@ -39,11 +40,14 @@ public class BuyDemo {
 				System.out.println("库存不足！");
 				System.out.println("请重新输入您要购买的商品数量：");
 			}else {
-				Goods mygood=new Goods();
+				
 				
 				try {
 					mygood=goods.clone();
 					mygood.setNumber(num);
+					Double total=new Double("0.0");	
+					Double price=new Double(goods.getPrice());
+					mygood.setPrice(total+(num*price));
 				} catch (CloneNotSupportedException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
