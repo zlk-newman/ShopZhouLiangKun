@@ -26,13 +26,11 @@ public class GoodsSelect {
         try {
             conn = DButil.getConnection();//得到连接对象Connection
             String sql ="SELECT * FROM goods WHERE id=? ";
-            /*AND Dname=? AND number=? AND price=?*/
+            
             stmt = conn.prepareStatement(sql);//得到执行sql语句的对象Statement
             //给？赋值
             stmt.setInt(1, id);
-            /*stmt.setString(2, dname);
-            stmt.setString(3, number);
-            stmt.setDouble(4, price);*/
+            
             
             rs = stmt.executeQuery();//执行sql语句
             if(rs.next()){
