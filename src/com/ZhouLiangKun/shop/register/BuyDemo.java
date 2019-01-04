@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import com.ZhouLiangKun.shop.dao.GoodsDao;
+
 import com.ZhouLiangKun.shop.pojo.Goods;
 
 public class BuyDemo {
@@ -59,7 +59,12 @@ public class BuyDemo {
 				
 				
 					System.out.println("下面是您的购物车信息：");
-					System.out.println(list);
+					System.out.println("商品编号\t商品名\t购买数量\t商品总价");
+					for(Goods go:list) {
+					
+					System.out.println(go.getId()+"\t"+go.getDname()+"\t"+go.getNumber()+"\t"+go.getPrice());
+					
+					}
 				
 			
 				

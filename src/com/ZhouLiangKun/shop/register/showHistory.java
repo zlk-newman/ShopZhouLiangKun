@@ -31,10 +31,10 @@ public class showHistory {
 		if(list1.isEmpty()) {
 			System.out.println("您还未购买商品！");
 		}else {
-			System.out.println("订单号\t用户名\t商品编号\t商品名\t购买数量\t已付款\n");
+			System.out.println("订单号\t用户名\t商品编号\t商品名\t购买数量\t已付款");
 			for(History his:list1) {
 			
-			System.out.println(his.getDid()+"\t"+his.getUname()+"\t"+his.getGid()+"\t"+his.getGname()+"\t"+his.getGnumber()+"\t"+his.getGprice()+"\n");
+			System.out.println(his.getDid()+"\t"+his.getUname()+"\t"+his.getGid()+"\t"+his.getGname()+"\t"+his.getGnumber()+"\t"+his.getGprice());
 			
 			}
 		}
