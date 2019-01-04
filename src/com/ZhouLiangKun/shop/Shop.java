@@ -2,7 +2,9 @@ package com.ZhouLiangKun.shop;
 /*主菜单设置
  * 
  */
-
+/** *
+ * @author 17612
+ */
 
 import java.util.Scanner;
 
@@ -37,14 +39,14 @@ public class Shop {
 		System.out.println("***********************");
 		System.out.println("请选择菜单：");
 		
-		String choice=sc.next();
+		int choice=sc.nextInt();
 		
-		boolean r = choice.matches("[0-4]+");//正则表达式
+		/*boolean r = choice.matches("[0-4]+");//正则表达式
 		if(r) {
 
-			int n=Integer.parseInt(choice);
+			int n=Integer.parseInt(choice);*/
 		
-		switch(n) {
+		switch(choice) {
 		case 1:
 			System.out.println("您选择的菜单是：注册");
 			Join.Join();
@@ -80,14 +82,15 @@ public class Shop {
 			
 		default:
 			System.out.println("您的输入有误！");
-				break;
+			Shop s3=new Shop();
+			s3.showMainMenu();
 		
 		}
 		
 		
 		}
-		
 		
 
+
 	}
-}
+
