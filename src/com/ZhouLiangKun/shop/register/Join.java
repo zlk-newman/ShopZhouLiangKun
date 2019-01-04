@@ -77,9 +77,13 @@ public class Join {
 							if (us.addUser(user)) {
 
 								System.out.println("添加用户成功");
-								break;
+								Shop s=new Shop();
+								s.showMainMenu();
+								
+								
 							} else {
-								// System.out.println("添加用户失败");
+								//System.out.println("添加用户失败");
+								continue;
 							}
 
 						} else {
