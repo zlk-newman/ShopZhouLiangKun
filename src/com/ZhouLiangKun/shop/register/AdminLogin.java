@@ -1,13 +1,12 @@
 package com.ZhouLiangKun.shop.register;
-import java.util.ArrayList;
-import java.util.List;
+
 /*
 π‹¿Ì‘±µ«¬Ω
 */
 import java.util.Scanner;
 
 import com.ZhouLiangKun.shop.Shop;
-import com.ZhouLiangKun.shop.pojo.Goods;
+
 
 public class AdminLogin {
 	

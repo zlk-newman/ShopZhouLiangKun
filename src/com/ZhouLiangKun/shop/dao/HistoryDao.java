@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.ZhouLiangKun.shop.pojo.Goods;
+
 import com.ZhouLiangKun.shop.pojo.History;
 import com.ZhouLiangKun.shop.tool.DButil;
 

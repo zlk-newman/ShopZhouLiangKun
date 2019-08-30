@@ -5,11 +5,7 @@ package com.ZhouLiangKun.shop;
  */
 import java.util.Scanner;
 
-import com.ZhouLiangKun.shop.dao.GoodsDao;
-import com.ZhouLiangKun.shop.dao.HistoryDao;
-import com.ZhouLiangKun.shop.pojo.Goods;
-import com.ZhouLiangKun.shop.pojo.History;
-import com.ZhouLiangKun.shop.register.BuyDemo;
+
 import com.ZhouLiangKun.shop.register.GoodsDemo;
 import com.ZhouLiangKun.shop.register.Join;
 import com.ZhouLiangKun.shop.register.Pay;

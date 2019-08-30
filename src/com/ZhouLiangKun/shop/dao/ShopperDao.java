@@ -2,7 +2,7 @@ package com.ZhouLiangKun.shop.dao;
 
 import java.sql.Connection;
 
-import com.ZhouLiangKun.shop.pojo.Goods;
+
 import com.ZhouLiangKun.shop.pojo.Shopper;
 import com.ZhouLiangKun.shop.tool.DButil;
 

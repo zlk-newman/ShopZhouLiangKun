@@ -50,7 +50,8 @@ public class DButil {
 		} catch (SQLException e) {
 
 			//e.printStackTrace();//表示显示异常
-			System.out.println("用户名已存在！");
+			System.out.println("出现重复！");
+			
 		}
 		
 		return n;
